@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Marcuslyj/node-app#readme",
   "dependencies": {
+    "glob": "^10.2.2",
     "webpack": "^5.82.0"
   },
   "devDependencies": {

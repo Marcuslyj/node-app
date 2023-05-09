@@ -1,19 +1,23 @@
 console.log(process.argv)
 
-import { getSum } from "./esm/lib.js"
+import path from 'path'
+import { fileURLToPath } from 'url'
+import * as glob from "glob"
 
-console.log(getSum(1, 2))
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+console.log(import.meta.url)
+console.log(__filename)
+console.log(__dirname)
+
+// 阻塞
+console.time('glob')
+const result = glob.sync(__dirname + '/**/*')
+console.timeEnd('glob')
+console.log(result.filter(url => url.indexOf('node-app/dist') >= 0))
+
+// 非阻塞
+glob(__dirname + '/**/*', (res) => { })
 
 
-// 监听输入
-process.stdin.on('data', e => {
-  const action = e.toString().trim()
-  console.log(action)
-  if (action === 'kill') {
-    process.exit()
-  }
-})
-
-// 内置模块，查node文档
-import events from 'events'
-console.log(events)
