@@ -6,10 +6,14 @@ console.log(getSum(1, 2))
 
 
 // 监听输入
-process.stdin.on('data', e=>{
+process.stdin.on('data', e => {
   const action = e.toString().trim()
   console.log(action)
   if (action === 'kill') {
     process.exit()
   }
 })
+
+// 内置模块，查node文档
+import events from 'events'
+console.log(events)
