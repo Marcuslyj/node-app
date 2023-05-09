@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack ./index.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/Marcuslyj/node-app/issues"
   },
-  "homepage": "https://github.com/Marcuslyj/node-app#readme"
+  "homepage": "https://github.com/Marcuslyj/node-app#readme",
+  "dependencies": {
+    "webpack": "^5.82.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.1.0"
+  }
 }
